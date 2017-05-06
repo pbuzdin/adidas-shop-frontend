@@ -8,6 +8,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
         <style>
+@font-face {
+      font-family: "AvenirNext";
+      src: url("https://p.burstingland.com/kurskurskurs/fonts/avenir-next-bold.woff");
+    }
+@font-face {
+      font-family: "AndaleMono";
+      src: url("https://p.burstingland.com/kurskurskurs/fonts/Andale-Mono.woff");
+    }
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -167,11 +176,15 @@
   text-transform: uppercase;
   border: 0;
   background: transparent;
-  padding: 13px 7px;
+  padding: 14px 7px;
+  cursor: pointer;
 }
 .gender-switch button.active,
 .size-line a.active {
   color: #4d42f8;
+}
+.sizes {
+  padding: 14px 0;
 }
 .size-title,
 .size-line a {
@@ -181,6 +194,65 @@
   color: #d6d6d6;
   text-transform: uppercase;
   text-decoration: none;
+}
+.size-title {
+  float: left;
+  margin-right: 18px;
+}
+.products-grid:first-child {
+  margin-top: 35px; 
+}
+.products-grid {
+  margin-top: 17px; 
+}
+.products-grid .col4:first-child {
+  padding-left: 23px;
+}
+.sale-badge {
+  display: none;
+  background: #ff5c5c;
+  font-family: 'AvenirNext', Arial;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 6px 20px;
+  position: absolute;
+  right: 0;
+  margin-top: 7px;
+  margin-right: 17px;
+}
+.product {
+  background: #f4f4f4;
+  padding: 8px 6px;
+}
+.product-img {
+  max-height: 193px;
+  overflow: hidden;
+}
+.product-img img {
+  width: 100%;
+}
+.product.sale .sale-badge {
+  display: block;
+}
+
+.price {
+  display: block;
+  padding: 23px 0 27px 0;
+  text-align: center;
+  font-family: 'AvenirNext', Arial;
+  font-size: 30px;
+  font-weight: bold;
+  background: #ffffff;
+  color: #0d0d0d;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-top: 8px;
+}
+.product.sale .price {
+  background-image: linear-gradient(107deg, #0c09bf, #966dd8);
+  color: #ffffff;
 }
         </style>
     </head>
@@ -227,8 +299,8 @@
           <button>Woman</button>
         </div>
       </div>
-      <div class="col8">
-        <span class="size-title">sizes</span>
+      <div class="sizes col8">
+        <span class="size-title">size</span>
         <div class="size-line">
           <a href="#">36</a>
           <a href="#">37</a>
@@ -241,11 +313,115 @@
        </div>
       </div>
       
-    <div class="products-grid">
-      123
+    <div class="products-grid row">
+      <div class="col4">
+        <div class="product sale">
+        <span class="sale-badge">sale</span>
+        <div class="product-img">
+        <img src="https://pbuzdin.github.io/kurskurskurs/1/img/product1.jpg"
+     srcset="https://pbuzdin.github.io/kurskurskurs/1/img/product1@2x.jpg 2x, 
+             https://pbuzdin.github.io/kurskurskurs/1/img/product1@3x.jpg 3x">
+          </div>
+        <a href="#" class="price">170$</a>
+      </div>
+        </div>
+      <div class="col4">
+        <div class="product sale">
+        <span class="sale-badge">sale</span>
+        <div class="product-img">
+        <img src="https://pbuzdin.github.io/kurskurskurs/1/img/product2.jpg"
+     srcset="https://pbuzdin.github.io/kurskurskurs/1/img/product2@2x.jpg 2x, 
+             https://pbuzdin.github.io/kurskurskurs/1/img/product2@3x.jpg 3x">
+          </div>
+        <a href="#" class="price">230$</a>
+      </div>
+      </div>
+      <div class="col4">
+        <div class="product sale">
+        <span class="sale-badge">sale</span>
+          <div class="product-img">
+        <img src="https://pbuzdin.github.io/kurskurskurs/1/img/product3.jpg"
+     srcset="https://pbuzdin.github.io/kurskurskurs/1/img/product3@2x.jpg 2x, 
+             https://pbuzdin.github.io/kurskurskurs/1/img/product3@3x.jpg 3x">
+          </div>
+        <a href="#" class="price">190$</a>
+      </div>
+    </div>
+    </div>
+
+    <div class="products-grid row">
+      <div class="col4">
+        <div class="product">
+        <span class="sale-badge">sale</span>
+        <div class="product-img">
+        <img src="https://pbuzdin.github.io/kurskurskurs/1/img/product2.jpg"
+     srcset="https://pbuzdin.github.io/kurskurskurs/1/img/product2@2x.jpg 2x, 
+             https://pbuzdin.github.io/kurskurskurs/1/img/product2@3x.jpg 3x">
+          </div>
+        <a href="#" class="price">170$</a>
+      </div>
+        </div>
+      <div class="col4">
+        <div class="product">
+        <span class="sale-badge">sale</span>
+        <div class="product-img">
+        <img src="https://pbuzdin.github.io/kurskurskurs/1/img/product3.jpg"
+     srcset="https://pbuzdin.github.io/kurskurskurs/1/img/product3@2x.jpg 2x, 
+             https://pbuzdin.github.io/kurskurskurs/1/img/product3@3x.jpg 3x">
+          </div>
+        <a href="#" class="price">230$</a>
+      </div>
+      </div>
+      <div class="col4">
+        <div class="product">
+        <span class="sale-badge">sale</span>
+          <div class="product-img">
+        <img src="https://pbuzdin.github.io/kurskurskurs/1/img/product1.jpg"
+     srcset="https://pbuzdin.github.io/kurskurskurs/1/img/product1@2x.jpg 2x, 
+             https://pbuzdin.github.io/kurskurskurs/1/img/product1@3x.jpg 3x">
+          </div>
+        <a href="#" class="price">190$</a>
+      </div>
+    </div>
+    </div>
+
+    <div class="products-grid row">
+      <div class="col4">
+        <div class="product sale">
+        <span class="sale-badge">sale</span>
+        <div class="product-img">
+        <img src="https://pbuzdin.github.io/kurskurskurs/1/img/product1.jpg"
+     srcset="https://pbuzdin.github.io/kurskurskurs/1/img/product1@2x.jpg 2x, 
+             https://pbuzdin.github.io/kurskurskurs/1/img/product1@3x.jpg 3x">
+          </div>
+        <a href="#" class="price">170$</a>
+      </div>
+        </div>
+      <div class="col4">
+        <div class="product sale ">
+        <span class="sale-badge">sale</span>
+        <div class="product-img">
+        <img src="https://pbuzdin.github.io/kurskurskurs/1/img/product2.jpg"
+     srcset="https://pbuzdin.github.io/kurskurskurs/1/img/product2@2x.jpg 2x, 
+             https://pbuzdin.github.io/kurskurskurs/1/img/product2@3x.jpg 3x">
+          </div>
+        <a href="#" class="price">230$</a>
+      </div>
+      </div>
+      <div class="col4">
+        <div class="product sale">
+        <span class="sale-badge">sale</span>
+          <div class="product-img">
+        <img src="https://pbuzdin.github.io/kurskurskurs/1/img/product3.jpg"
+     srcset="https://pbuzdin.github.io/kurskurskurs/1/img/product3@2x.jpg 2x, 
+             https://pbuzdin.github.io/kurskurskurs/1/img/product3@3x.jpg 3x">
+          </div>
+        <a href="#" class="price">190$</a>
+      </div>
+    </div>
     </div>
   </div>
-  
   </div>
+        
     </body>
 </html>

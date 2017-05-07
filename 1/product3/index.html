@@ -1,1 +1,564 @@
+<!doctype html>
+<html>
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Product3</title>
+    <meta name="description" content="Shoes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+    <style>
+        /*
+https://p.burstingland.com/kurskurskurs/fonts/Andale-Mono.ttf
+https://p.burstingland.com/kurskurskurs/fonts/Andale-Mono.woff
+https://p.burstingland.com/kurskurskurs/fonts/avenir-next-bold.eot
+https://p.burstingland.com/kurskurskurs/fonts/avenir-next-bold.svg
+https://p.burstingland.com/kurskurskurs/fonts/avenir-next-bold.woff
+https://p.burstingland.com/kurskurskurs/fonts/avenir-next-regular.eot
+https://p.burstingland.com/kurskurskurs/fonts/avenir-next-regular.svg
+https://p.burstingland.com/kurskurskurs/fonts/avenir-next-regular.woff
+*/
+        
+        @font-face {
+            font-family: "AvenirNext";
+            src: url("https://p.burstingland.com/kurskurskurs/fonts/avenir-next-bold.woff");
+        }
+        
+        @font-face {
+            font-family: "AndaleMono";
+            src: url("https://p.burstingland.com/kurskurskurs/fonts/Andale-Mono.woff");
+        }
+        
+        @font-face {
+            font-family: "Avenir";
+            src: url("https://p.burstingland.com/kurskurskurs/fonts/avenir-next-medium.woff");
+        }
+        
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            max-width: 1439px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .sidebar {
+            background: #0e0e0e;
+            color: #FFF;
+            max-width: 370px;
+            float: left;
+            width: 100%;
+            min-height: 1185px;
+            padding: 31px 22px;
+        }
+        
+        .products {
+            background: #FFF;
+            max-width: 1025px;
+            float: left;
+            width: 100%;
+            height: 1024px;
+            padding: 0;
+        }
+        
+        .logo {
+            width: 94px;
+            height: 94px;
+            margin: 0 auto;
+        }
+        
+        .search {
+            margin: 0 auto;
+        }
+        
+        .search form {
+            border-bottom: 4px solid #373737;
+            padding: 0;
+        }
+        
+        .search form label {}
+        
+        .search-icon {
+            position: absolute;
+            width: 28px;
+            height: 30px;
+            margin: 10px;
+        }
+        
+        .search form input {
+            background: transparent;
+            border: 0;
+            color: #373737;
+            font-size: 30px;
+            margin-left: 45px;
+            min-height: 30px;
+            padding: 8px 0;
+        }
+        
+        .search form input:focus {
+            outline: none;
+        }
+        
+        .nav {
+            margin-top: 148px;
+        }
+        
+        .nav .category,
+        .nav .subcategory {
+            font-size: 24px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            color: #ffffff;
+        }
+        
+        .nav .category {
+            font-family: 'AvenirNext', Arial;
+            margin-bottom: 32px;
+            font-weight: bold;
+            color: #303030;
+        }
+        
+        .nav .category + div {
+            margin-bottom: 56px;
+        }
+        
+        .nav .subcategory {
+            font-family: 'AndaleMono', Arial;
+            margin-bottom: 26px;
+            color: #3c3c3c;
+        }
+        
+        .nav .subcategory:last-child {
+            margin: 0;
+        }
+        
+        .nav .arrow-down-icon {
+            width: 14px;
+            height: 9px;
+            vertical-align: 4px;
+        }
+        
+        .nav .category.active,
+        .nav .subcategory.active {
+            color: #ffffff;
+        }
+        
+        .nav .category.active:after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 9px;
+            margin-top: 10px;
+            margin-left: 7px;
+            background: url('https://pbuzdin.github.io/kurskurskurs/1/img/arrow-down-icon.svg') no-repeat;
+        }
+        
+        .row {
+            margin-right: -4px;
+            margin-left: -4px;
+        }
+        
+        .row:after {
+            clear: both;
+        }
+        
+        .row:after,
+        .row:before {
+            display: table;
+            content: " ";
+        }
+        
+        .col4,
+        .col8 {
+            position: relative;
+            min-height: 1px;
+            padding-right: 4px;
+            padding-left: 4px;
+            float: left;
+        }
+        
+        .col4 {
+            width: 339.6px;
+        }
+        
+        .col8 {
+            width: 679.2px;
+        }
+        
+        .col12 {
+            width: 1018.8px;
+        }
+        
+        .filter {
+            padding: 11px 0 0 0;
+        }
+        
+        .gender {
+            padding-left: 23px;
+        }
+        
+        .filter-icon {
+            background: #ebebeb;
+            padding: 11px 7.5px;
+            float: left;
+        }
+        
+        .gender-switch {
+            margin-left: 84px;
+        }
+        
+        .gender-switch button {
+            font-family: 'AvenirNext', Arial;
+            font-size: 24px;
+            font-weight: bold;
+            color: #d6d6d6;
+            text-transform: uppercase;
+            border: 0;
+            background: transparent;
+            padding: 14px 7px;
+            cursor: pointer;
+        }
+        
+        .gender-switch button.active,
+        .size-line a.active {
+            color: #4d42f8;
+        }
+        
+        .sizes {
+            padding: 14px 0;
+        }
+        
+        .size-title,
+        .size-line a {
+            font-family: 'AvenirNext', Arial;
+            font-size: 24px;
+            font-weight: bold;
+            color: #d6d6d6;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+        
+        .size-title {
+            float: left;
+            margin-right: 18px;
+        }
+        
+        .products-grid:first-child {
+            margin-top: 35px;
+        }
+        
+        .products-grid {
+            margin-top: 17px;
+        }
+        
+        .products-grid .col4:first-child {
+            padding-left: 23px;
+        }
+        
+        .sale-badge {
+            display: none;
+            background: #ff5c5c;
+            font-family: 'AvenirNext', Arial;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ffffff;
+            padding: 6px 20px;
+            position: absolute;
+            right: 0;
+            margin-top: 7px;
+            margin-right: 17px;
+        }
+        
+        .product {
+            background: #f4f4f4;
+            padding: 8px 6px;
+        }
+        
+        .product-img {
+            max-height: 193px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+        }
+        
+        .product.sale .sale-badge {
+            display: block;
+        }
+        
+        .price {
+            display: block;
+            padding: 23px 0 27px 0;
+            text-align: center;
+            font-family: 'AvenirNext', Arial;
+            font-size: 30px;
+            font-weight: bold;
+            background: #ffffff;
+            color: #0d0d0d;
+            text-transform: uppercase;
+            text-decoration: none;
+            margin-top: 8px;
+        }
+        
+        .product.sale .price {
+            background-image: linear-gradient(107deg, #0c09bf, #966dd8);
+            color: #ffffff;
+        }
+        
+        .product-info {
+            background: #fff;
+            margin-top: 26px;
+            float: left;
+            width: 60%;
+            min-width: 1025px;
+        }
+        
+        .product-container {
+            margin-left: 31px;
+            position: relative;
+        }
+        
+        .hover {
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+        
+        .left-info {
+            float: left;
+        }
+        
+        .right-info {
+            float: right;
+        }
+        
+        .product-info.sale .sale-badge {
+            display: inline-block;
+            position: relative;
+            margin: 0 0 0 51px;
+        }
+        
+        .product-title {
+            font-family: 'AvenirNext', Arial;
+            font-weight: bold;
+            font-size: 64px;
+            line-height: 1;
+            color: #3a3a3a;
+            text-transform: uppercase;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .save {
+            background: #e3e3e3;
+            border-radius: 75px;
+            width: 75px;
+            height: 75px;
+            border: 0;
+            color: #fff;
+            font-family: 'AvenirNext', Arial;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 14px;
+        }
+        
+        .color-switch {
+            width: 18px;
+            height: 18px;
+            border-radius: 18px;
+            border: 0;
+            padding: 4px;
+            margin-left: 13px;
+        }
+        
+        .color1 {
+            background: #c5c5c5;
+        }
+        
+        .color2 {
+            background: #4d87ca;
+        }
+        
+        .color3 {
+            background: #4a4a4a;
+        }
+        
+        .color4 {
+            background: #e0e0e0;
+        }
+        
+        .product-info .price {
+            font-size: 80px;
+            color: #e2e2e2;
+            display: block;
+            padding: 0;
+            margin: 26px 0 0 0;
+            background: transparent;
+            text-align: right;
+        }
+        
+        .photo-show {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+        
+        .photo-tour {
+            height: 120px;
+            overflow: hidden;
+        }
+        
+        .photo-tour img {
+            max-height: 120px;
+            border: 5px solid transparent;
+        }
+        
+        .photo-tour img.current {
+            border: 5px solid #e8e8ea;
+        }
+        
+        .triple {
+            width: 159px;
+            height: 18px;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAGCAYAAAACEPQxAAAAFUlEQVQYV2NgAIHnz5//RyLAYiAAAMIcCx2s9l//AAAAAElFTkSuQmCC') repeat;
+            display: inline-block;
+            vertical-align: 52px;
+            margin: 0 28px;
+        }
+        
+        .more-photos {
+            width: 45px;
+            height: 57px;
+            font-family: 'Avenir', Arial;
+            font-size: 14px;
+            font-weight: 500;
+            color: #c0c0c0;
+            text-decoration: none;
+            display: inline-block;
+            vertical-align: 40px;
+        }
+        
+        .product-desc {
+            font-family: 'AvenirNext', Arial;
+            font-size: 33px;
+            font-weight: 500;
+            line-height: 1.52;
+            text-align: left;
+            color: #d8d8d8;
+        }
+        
+        .product-desc a {
+            color: #6e6e6e;
+            text-decoration: none;
+        }
+        
+        .buy {
+            font-family: 'AvenirNext', Arial;
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffffff;
+            text-transform: uppercase;
+            border: 0;
+            display: block;
+            background-image: linear-gradient(to right, #4949aa, #27275d);
+            width: 100%;
+            padding: 39.5px 0;
+            margin-top: 176px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="sidebar">
+            <div class="logo">
+                <img src="https://pbuzdin.github.io/kurskurskurs/1/img/logo.png" srcset="https://pbuzdin.github.io/kurskurskurs/1/img/logo@2x.png 2x, 
+                https://pbuzdin.github.io/kurskurskurs/1/img/logo@3x.png 3x" class="logo-img">
+            </div>
+            <div class="search">
+                <form>
+                    <label>
+          <img src="https://pbuzdin.github.io/kurskurskurs/1/img/search-icon.svg" class="search-icon">
+          <input type="input">
+        </label>
+                </form>
+            </div>
+            <div class="nav">
+                <a href="#" class="category active">sports</a>
+                <div>
+                    <a href="#" class="subcategory active">shoes</a>
+                    <a href="#" class="subcategory">clothing</a>
+                    <a href="#" class="subcategory">accesories</a>
+                </div>
+
+                <a href="#" class="category">brands</a>
+                <a href="#" class="category">micoach</a>
+            </div>
+        </div>
+
+        <div class="product-info sale">
+            <div class="product-container">
+                <div class="hover">
+
+                    <div class="left-info">
+                        <h1 class="product-title">Ultra<br>Boost</h1>
+                        <button class="save">save</button>
+                    </div>
+
+                    <div class="right-info">
+                        <button class="color-switch color1"></button>
+                        <button class="color-switch color2"></button>
+                        <button class="color-switch color3"></button>
+                        <button class="color-switch color4"></button>
+                        <span class="sale-badge">sale</span>
+                        <h2 class="price">170$</h2>
+                    </div>
+
+                </div>
+
+                <img src="https://pbuzdin.github.io/kurskurskurs/1/product3/img/product3-4.jpg" srcset="https://pbuzdin.github.io/kurskurskurs/1/product3/img/product3-4@2x.jpg 2x, 
+             https://pbuzdin.github.io/kurskurskurs/1/product3/img/product3-4@3x.jpg 3x" class="photo-show">
+
+                <div class="photo-tour">
+                    <img src="https://pbuzdin.github.io/kurskurskurs/1/product3/img/product3-1.jpg" srcset="https://pbuzdin.github.io/kurskurskurs/1/product3/img/product3-1@2x.jpg 2x, 
+             https://pbuzdin.github.io/kurskurskurs/1/product3/img/product3-1@3x.jpg 3x" class="photo-thumb">
+
+                    <img src="https://pbuzdin.github.io/kurskurskurs/1/product3/img/product3-2.jpg" srcset="https://pbuzdin.github.io/kurskurskurs/1/product3/img/product3-2@2x.jpg 2x, 
+             https://pbuzdin.github.io/kurskurskurs/1/product3/img/product3-2@3x.jpg 3x" class="photo-thumb">
+
+                    <img src="https://pbuzdin.github.io/kurskurskurs/1/product3/img/product3-3.jpg" srcset="https://pbuzdin.github.io/kurskurskurs/1/product3/img/product3-3@2x.jpg 2x, 
+             https://pbuzdin.github.io/kurskurskurs/1/product3/img/product3-3@3x.jpg 3x" class="photo-thumb">
+
+                    <img src="https://pbuzdin.github.io/kurskurskurs/1/product3/img/product3-4.jpg" srcset="https://pbuzdin.github.io/kurskurskurs/1/product3/img/product3-4@2x.jpg 2x, 
+             https://pbuzdin.github.io/kurskurskurs/1/product3/img/product3-4@3x.jpg 3x" class="photo-thumb current">
+
+                    <div class="triple"></div>
+                    <a href="#" class="more-photos">see more photos</a>
+
+                </div>
+
+                <p class="product-desc"><a href="#">Adidas</a> is a German multinational corporation, headquartered in Herzogenaurach, Germany, that
+                    designs and manufactures shoes, clothing and accessories.</p>
+
+            </div>
+            <button class="buy">buy now</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

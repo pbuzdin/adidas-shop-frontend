@@ -8,7 +8,7 @@ export default () => {
       <div className="container">
         <div className="sidebar">
           <div className="logo">
-            <img src={require("./img/logo.png")} className="logo-img" alt="" />
+            <img src={require("./img/logo.svg")} className="logo-img" alt="" />
           </div>
           <div className="search">
             <form>

@@ -1,35 +1,13 @@
 import React from 'react';
 //import ReactDOM from 'react-dom';
 import './style.css';
+import Sidebar from './Sidebar';
 
 export default () => {
   return (
     <div className="ShoesCategory">
       <div className="container">
-        <div className="sidebar">
-          <div className="logo">
-            <img src={require("./img/logo.svg")} className="logo-img" alt="" />
-          </div>
-          <div className="search">
-            <form>
-              <label>
-                <img src={require("./img/search-icon.svg")} className="search-icon" alt="" />
-                <input type="input" />
-              </label>
-            </form>
-          </div>
-          <div className="nav">
-            <a href="#" className="category active">sports</a>
-            <div>
-              <a href="#" className="subcategory active">shoes</a>
-              <a href="#" className="subcategory">clothing</a>
-              <a href="#" className="subcategory">accesories</a>
-            </div>
-
-            <a href="#" className="category">brands</a>
-            <a href="#" className="category">micoach</a>
-          </div>
-        </div>
+        <Sidebar />
 
         <div className="products">
           <div className="filter row">

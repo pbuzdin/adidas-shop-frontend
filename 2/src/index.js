@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
 import './index.css';
-import ShoesCategory from './ShoesCategory';
+import ShoesCategory from './ShoesCategory/ShoesCategory';
 
-ReactDOM.render(
-  <ShoesCategory />,
+ReactDOM.render( <
+  ShoesCategory / > ,
   document.getElementById('root')
 );

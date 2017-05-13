@@ -135,7 +135,6 @@
 }
 
 .product-container {
-  margin-left: 31px;
   position: relative;
 }
 
@@ -168,6 +167,7 @@
   text-transform: uppercase;
   padding: 0;
   margin: 0;
+  max-width: 230px;
 }
 
 .save {

@@ -1,13 +1,12 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
 import './style.css';
 
-const SaleBadge = (props) => (
+const Badge = (props) => (
   <span className="sale-badge">{props.children}</span>
 )
 
 export default () => {
   return (
-    <SaleBadge>sale</SaleBadge>
+    <Badge>sale</Badge>
   );
 }

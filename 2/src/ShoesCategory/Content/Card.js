@@ -1,7 +1,6 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
+import Badge from './Badge';
 import './style.css';
-import SaleBadge from './SaleBadge';
 
 const FilterSelect = (props) => (
   <button>{props.children}</button>
@@ -9,14 +8,12 @@ const FilterSelect = (props) => (
 
 export default () => {
   return (
-    <div className="col4">
-      <div className="product sale">
-        <SaleBadge />
-        <div className="product-img">
-          <img src={require("./img/product1.jpg")} alt="" />
-        </div>
-        <a href="#" className="price">170$</a>
+    <div className="product sale">
+      <Badge />
+      <div className="product-img">
+        <img src={require("./img/product1.jpg")} alt="" />
       </div>
+      <a href="#" className="price">170$</a>
     </div>
   );
 }

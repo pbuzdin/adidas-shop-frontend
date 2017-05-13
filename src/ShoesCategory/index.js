@@ -5,7 +5,7 @@ import Content from './Content';
 
 export default () => {
   return (
-    <div className="container">
+    <div className="container1">
       <Sidebar />
       <Content />
     </div>

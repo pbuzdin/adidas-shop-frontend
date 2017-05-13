@@ -14,7 +14,7 @@
 }
 
 .gender {
-  padding-left: 23px;
+  margin-bottom: 36px;
 }
 
 .filter-icon {
@@ -28,7 +28,8 @@
   margin-left: 84px;
 }
 
-.gender-switch button {
+.gender-switch button,
+.size-line button {
   font-family: 'AvenirNext', Arial;
   font-size: 24px;
   font-weight: bold;
@@ -63,10 +64,7 @@
 .size-title {
   float: left;
   margin-right: 18px;
-}
-
-.products-grid:first-child {
-  margin-top: 35px;
+  padding: 14px 7px;
 }
 
 .products-grid {
@@ -87,11 +85,12 @@
   padding: 6px 20px;
   position: absolute;
   margin-top: 7px;
-  margin-left: 228px;
+  margin-left: 243px;
 }
 .product {
   background: #f4f4f4;
   padding: 8px 6px;
+  margin-bottom: 24px;
 }
 
 .product-img {

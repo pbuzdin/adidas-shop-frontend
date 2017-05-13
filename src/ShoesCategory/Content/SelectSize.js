@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FilterSelect = (props) => (
-  <button>{props.children}</button>
+  <button className={props.className}>{props.children}</button>
 )
 
 export default () => {
@@ -14,7 +14,7 @@ export default () => {
         <FilterSelect>38</FilterSelect>
         <FilterSelect>39</FilterSelect>
         <FilterSelect>40</FilterSelect>
-        <FilterSelect>41</FilterSelect>
+        <FilterSelect className="active">41</FilterSelect>
         <FilterSelect>42</FilterSelect>
       </div>
     </div >

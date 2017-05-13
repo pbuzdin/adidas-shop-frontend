@@ -23,8 +23,7 @@ export default () => {
 
         </div>
 
-        <img src={require("./img/product3-4.jpg")} src="http://dev.iboong.com/adidas-shop-frontend/1/product3/img/product3-4.jpg" srcset="http://dev.iboong.com/adidas-shop-frontend/1/product3/img/product3-4@2x.jpg 2x, 
-          http://dev.iboong.com/adidas-shop-frontend/1/product3/img/product3-4@3x.jpg 3x" className="photo-show" />
+        <img src={require("./img/product3-4.jpg")} className="photo-show" />
 
         <div className="photo-tour">
           <img src={require("./img/product3-1.jpg")} className="photo-thumb" />

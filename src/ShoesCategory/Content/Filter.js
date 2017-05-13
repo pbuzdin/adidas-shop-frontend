@@ -7,14 +7,14 @@ const FilterSelect = (props) => (
 export default () => {
   return (
     <div className="filter row">
-      <div className="gender col4">
+      <div className="gender col-xs-4">
         <img src={require("./img/filter.svg")} className="filter-icon" alt="" />
         <div className="gender-switch">
           <FilterSelect>Man</FilterSelect>
           <FilterSelect>Woman</FilterSelect>
         </div>
       </div>
-      <div className="sizes col8">
+      <div className="sizes col-xs-8">
         <span className="size-title">size</span>
         <div className="size-line">
           <FilterSelect>36</FilterSelect>

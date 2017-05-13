@@ -4,38 +4,38 @@ import Card from './Card';
 
 export default () => {
   return (
-    <div className="content">
+    <div>
       <Filter />
       <div className="products-grid row">
-        <div className="col4">
+        <div className="col-xs-4">
           <Card />
         </div>
-        <div className="col4">
+        <div className="col-xs-4">
           <Card />
         </div>
-        <div className="col4">
-          <Card />
-        </div>
-      </div>
-      <div className="products-grid row">
-        <div className="col4">
-          <Card />
-        </div>
-        <div className="col4">
-          <Card />
-        </div>
-        <div className="col4">
+        <div className="col-xs-4">
           <Card />
         </div>
       </div>
       <div className="products-grid row">
-        <div className="col4">
+        <div className="col-xs-4">
           <Card />
         </div>
-        <div className="col4">
+        <div className="col-xs-4">
           <Card />
         </div>
-        <div className="col4">
+        <div className="col-xs-4">
+          <Card />
+        </div>
+      </div>
+      <div className="products-grid row">
+        <div className="col-xs-4">
+          <Card />
+        </div>
+        <div className="col-xs-4">
+          <Card />
+        </div>
+        <div className="col-xs-4">
           <Card />
         </div>
       </div>

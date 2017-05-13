@@ -1,6 +1,25 @@
 import React from 'react';
 import Badge from './Badge';
 
+const ProductName = (props) => (
+  <h1 className="product-title">{props.children}</h1>
+)
+const BtnRound = (props) => (
+  <button className="save">{props.children}</button>
+)
+const SwitchColor = (props) => (
+  <button className={"color-switch " + props.color} />
+)
+const Price = (props) => (
+  <h2 className="price">{props.children}</h2>
+)
+const ProductDesc = (props) => (
+  <p className="product-desc">{props.children}</p>
+)
+const BtnLarge = (props) => (
+  <button className="buy">{props.children}</button>
+)
+
 export default () => {
   return (
     <div className="product-info sale">
@@ -8,17 +27,17 @@ export default () => {
         <div className="hover">
 
           <div className="left-info">
-            <h1 className="product-title">Ultra Boost</h1>
-            <button className="save">save</button>
+            <ProductName>Ultra Boost</ProductName>
+            <BtnRound>save</BtnRound>
           </div>
 
           <div className="right-info">
-            <button className="color-switch color1"></button>
-            <button className="color-switch color2"></button>
-            <button className="color-switch color3"></button>
-            <button className="color-switch color4"></button>
+            <SwitchColor color="color1" />
+            <SwitchColor color="color2" />
+            <SwitchColor color="color3" />
+            <SwitchColor color="color4" />
             <Badge />
-            <h2 className="price">170$</h2>
+            <Price>170$</Price>
           </div>
 
         </div>
@@ -35,11 +54,11 @@ export default () => {
 
         </div>
 
-        <p className="product-desc"><a href="#">Adidas</a> is a German multinational corporation,<br />headquartered in Herzogenaurach, Germany, that
-                    designs<br />and manufactures shoes, clothing and accessories.</p>
+        <ProductDesc><a href="#">Adidas</a> is a German multinational corporation,<br />headquartered in Herzogenaurach, Germany, that
+                    designs<br />and manufactures shoes, clothing and accessories.</ProductDesc>
 
       </div>
-      <button className="buy">buy now</button>
+      <BtnLarge>buy now</BtnLarge>
     </div>
   );
 }

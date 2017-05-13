@@ -4,8 +4,6 @@ const Badge = (props) => (
   <span className="sale-badge">{props.children}</span>
 )
 
-export default () => {
-  return (
-    <Badge>sale</Badge>
-  );
-}
+export default () => (
+  <Badge>sale</Badge>
+)

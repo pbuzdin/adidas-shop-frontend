@@ -1,23 +1,25 @@
-import React, { Component } from 'react';
-//import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  NavLink,
+  Link,
+  Route
+} from 'react-router-dom'
+import './style.css';
+import './Content/style.css';
+import Sidebar from './Sidebar';
+import List from './Content/List';
+import Details from './Content/Details';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          //<img src={logo} className="App-logo" alt="logo" />
-          <h2>заголовок</h2>
-        </div>
-        <p className="App-intro">
-          параграф
-        </p>
-        <Shoes_Category />
+export default () => (
+  <Router>
+    <div className="container1">
+      <Sidebar />
+      <div className="content">
+        <Route exact path="/" component={List} />
+        <Route path="/item" component={Details} />
+        <NavLink to="/" className="category" activeClassName="active">shoes</NavLink>
       </div>
-
-    );
-  }
-}
-
-export default App;
+    </div>
+  </Router>
+)

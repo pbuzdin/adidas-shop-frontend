@@ -4,8 +4,6 @@ import {
   Route
 } from 'react-router-dom'
 import './style.css';
-import Filter from './Filter';
-import Card from './Card';
 import List from './List';
 import Details from './Details';
 

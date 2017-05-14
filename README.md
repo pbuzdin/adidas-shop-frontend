@@ -1,6 +1,6 @@
 # Adidas-shop V.2.0
 
- http://obnoxious-decision.surge.sh
+ http://imported-beds.surge.sh
 
 ```sh
 $ yarn start

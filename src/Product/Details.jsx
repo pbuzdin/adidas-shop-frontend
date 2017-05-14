@@ -47,28 +47,32 @@ const BtnRound = styled.button`
   text-transform: uppercase;
   margin-top: 14px;
 `;
-const SwitchColor = styled.button`
-  width: 18px;
-  height: 18px;
-  border-radius: 18px;
-  border: 0;
-  padding: 4px;
-  margin-left: 13px;
+const SwitchColor = styled.div`
+  display: inline-block;
   margin-top: 6px;
-  cursor: pointer;
-  background: #c5c5c5;
-  & .color1 {
-  background: #c5c5c5;
-}
-  & .color2 {
-  background: #4d87ca;
-}
-  & .color3 {
-  background: #4a4a4a;
-}
-  & .color4 {
-  background: #e0e0e0;
-}
+  > button {
+    width: 18px;
+    height: 18px;
+    border-radius: 18px;
+    border: 0;
+    padding: 4px;
+    margin-left: 13px;
+    margin-top: 6px;
+    cursor: pointer;
+    background: #c5c5c5;
+  }
+  & button.color1 {
+    background: #c5c5c5;
+  }
+  & button.color2 {
+    background: #4d87ca;
+  }
+  & button.color3 {
+    background: #4a4a4a;
+  }
+  & button.color4 {
+    background: #e0e0e0;
+  }
 `;
 const ProductPhotos = styled.div`
   height: 120px;
@@ -142,13 +146,6 @@ const BtnLarge = styled.button`
   bottom: 0;
 `;
 
-// const SwitchColor = props => (
-//   <button className={`color-switch ${props.color}`} />
-// );
-// const Price = props => <h2 className="price">{props.children}</h2>;
-// const ProductDesc = props => <p className="product-desc">{props.children}</p>;
-// const BtnLarge = props => <button className="buy">{props.children}</button>;
-
 export default () => (
   <Product>
     <InfoLeft>
@@ -156,10 +153,12 @@ export default () => (
       <BtnRound>save</BtnRound>
     </InfoLeft>
     <InfoRight>
-      <SwitchColor className="color1" />
-      <SwitchColor className="color2" />
-      <SwitchColor className="color3" />
-      <SwitchColor className="color4" />
+      <SwitchColor>
+        <button className="color1" />
+        <button className="color2" />
+        <button className="color3" />
+        <button className="color4" />
+      </SwitchColor>
       <Badge />
       <Price>170$</Price>
     </InfoRight>

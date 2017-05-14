@@ -5,7 +5,7 @@ const SelectGender = styled.div`
   margin-left: 30px;
   display: inline-block;
 `;
-const FilterSelect = styled.button`
+const Btn = styled.button`
   font-family: 'AvenirNext', Arial;
   font-size: 24px;
   color: #d6d6d6;
@@ -19,7 +19,7 @@ const FilterSelect = styled.button`
 
 export default () => (
   <SelectGender>
-    <FilterSelect isActive>Man</FilterSelect>
-    <FilterSelect>Woman</FilterSelect>
+    <Btn isActive>Man</Btn>
+    <Btn>Woman</Btn>
   </SelectGender>
 );

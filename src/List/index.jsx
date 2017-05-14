@@ -2,8 +2,7 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
 
-import SelectGender from './Filter/SelectGender';
-import SelectSize from './Filter/SelectSize';
+import Filter from './Filter';
 import Card from '../Product/Card';
 
 const Content = styled.div`
@@ -17,15 +16,8 @@ const Content = styled.div`
 
 export default () => (
   <Content>
+    <Filter />
     <Grid>
-      <Row>
-        <Col xs={4}>
-          <SelectGender />
-        </Col>
-        <Col xs={8}>
-          <SelectSize />
-        </Col>
-      </Row>
       <Row>
         <Col xs={4}>
           <Card />

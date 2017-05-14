@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Sizes = styled.div`
+const SelectSize = styled.div`
+  display: inline-block;
+  margin-left: 50px;
 `;
 const FilterLabel = styled.span`
   font-family: 'AvenirNext', Arial;
@@ -27,7 +29,7 @@ const FilterSelect = styled.button`
 `;
 
 export default () => (
-  <Sizes>
+  <SelectSize>
     <FilterLabel>size</FilterLabel>
     <FilterSelect>36</FilterSelect>
     <FilterSelect>37</FilterSelect>
@@ -36,5 +38,5 @@ export default () => (
     <FilterSelect>40</FilterSelect>
     <FilterSelect isActive>41</FilterSelect>
     <FilterSelect>42</FilterSelect>
-  </Sizes>
+  </SelectSize>
 );

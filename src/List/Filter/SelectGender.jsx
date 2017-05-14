@@ -1,18 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Gender = styled.div`
-  outline: none;
-  > img {
-    background: #ebebeb;
-    padding: 11px 7.5px;
-    float: left;
-    width: 55px;
-  }
-`;
 const SelectGender = styled.div`
-  margin-bottom: 36px;
-  margin-left: 84px;
+  margin-left: 30px;
+  display: inline-block;
 `;
 const FilterSelect = styled.button`
   font-family: 'AvenirNext', Arial;
@@ -27,11 +18,8 @@ const FilterSelect = styled.button`
 `;
 
 export default () => (
-  <Gender>
-    <img src={require('./filter.svg')} alt="" />
-    <SelectGender>
-      <FilterSelect isActive>Man</FilterSelect>
-      <FilterSelect>Woman</FilterSelect>
-    </SelectGender>
-  </Gender>
+  <SelectGender>
+    <FilterSelect isActive>Man</FilterSelect>
+    <FilterSelect>Woman</FilterSelect>
+  </SelectGender>
 );

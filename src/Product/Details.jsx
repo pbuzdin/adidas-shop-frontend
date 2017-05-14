@@ -48,10 +48,11 @@ const BtnRound = styled.button`
   text-transform: uppercase;
   margin-top: 14px;
 `;
-const SwitchColor = styled.div`
+const SelectColor = styled.div`
   display: inline-block;
   margin-top: 6px;
-  > button {
+`;
+const BtnColor = styled.button`
     width: 18px;
     height: 18px;
     border-radius: 18px;
@@ -60,7 +61,11 @@ const SwitchColor = styled.div`
     margin-left: 13px;
     cursor: pointer;
     background: #c5c5c5;
-  }
+  background: ${props => (props.isRed ? '#fff' : '#c5c5c5')};
+  background: ${props => (props.isGreen ? '#fff' : '#4d87ca')};
+  background: ${props => (props.Color3 ? '#fff' : '#4a4a4a')};
+  background: ${props => (props.Color4 ? '#fff' : '#e0e0e0')};
+
   & button.color1 {
     background: #c5c5c5;
   }
@@ -82,6 +87,7 @@ const ProductPhotos = styled.div`
     border: 5px solid transparent;
     cursor: pointer;
   }
+  color: ${props => (props.isActive ? '#fff' : '#3c3c3c')};
   > img.current {
     border: 5px solid #e8e8ea;
   }
@@ -153,12 +159,12 @@ export default () => (
       <BtnRound>save</BtnRound>
     </InfoLeft>
     <InfoRight>
-      <SwitchColor>
-        <button className="color1" />
-        <button className="color2" />
-        <button className="color3" />
-        <button className="color4" />
-      </SwitchColor>
+      <SelectColor>
+        <BtnColor isRed />
+        <BtnColor isGreen />
+        <BtnColor Color1 />
+        <BtnColor Color1 />
+      </SelectColor>
       <Badge />
       <Price>170$</Price>
     </InfoRight>

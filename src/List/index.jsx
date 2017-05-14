@@ -1,12 +1,21 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import './style.css';
+import styled from 'styled-components';
 import SelectGender from './Filter/SelectGender';
 import SelectSize from './Filter/SelectSize';
-import Card from '../Product//Card';
+import Card from '../Product/Card';
+
+const Content = styled.div`
+  background: #FFF;
+  max-width: 1025px;
+  float: left;
+  width: 100%;
+  margin-left: 25px;
+  margin-top: 17px;
+`;
 
 export default () => (
-  <div className="products-grid">
+  <Content>
     <Grid>
       <Row>
         <Col xs={4}>
@@ -50,5 +59,5 @@ export default () => (
         </Col>
       </Row>
     </Grid>
-  </div>
+  </Content>
 );

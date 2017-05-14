@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Gender = styled.div`
-  & img {
+  outline: none;
+  > img {
     background: #ebebeb;
     padding: 11px 7.5px;
     float: left;

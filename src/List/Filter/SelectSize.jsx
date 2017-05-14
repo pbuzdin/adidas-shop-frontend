@@ -5,7 +5,7 @@ const SelectSize = styled.div`
   display: inline-block;
   margin-left: 50px;
 `;
-const FilterLabel = styled.span`
+const Label = styled.span`
   font-family: 'AvenirNext', Arial;
   font-size: 24px;
   color: #4d42f8;
@@ -30,7 +30,7 @@ const FilterSelect = styled.button`
 
 export default () => (
   <SelectSize>
-    <FilterLabel>size</FilterLabel>
+    <Label>size</Label>
     <FilterSelect>36</FilterSelect>
     <FilterSelect>37</FilterSelect>
     <FilterSelect>38</FilterSelect>

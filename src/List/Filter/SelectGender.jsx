@@ -23,14 +23,14 @@ const FilterSelect = styled.button`
   background: transparent;
   padding: 14px 7px;
   cursor: pointer;
-  color: ${props => (props.active ? '#4d42f8' : '#d6d6d6')};
+  color: ${props => (props.isActive ? '#4d42f8' : '#d6d6d6')};
 `;
 
 export default () => (
   <Gender>
     <img src={require('./filter.svg')} alt="" />
     <SelectGender>
-      <FilterSelect active>Man</FilterSelect>
+      <FilterSelect isActive>Man</FilterSelect>
       <FilterSelect>Woman</FilterSelect>
     </SelectGender>
   </Gender>

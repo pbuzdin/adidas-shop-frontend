@@ -44,15 +44,15 @@ const Link = styled.div`
       background: url(${ArrowDown}) no-repeat;
     }
   `}
-  color: ${props => (props.active ? '#fff' : '#3c3c3c')};
+  color: ${props => (props.isActive ? '#fff' : '#3c3c3c')};
 `;
 
 export default () => (
   <Nav>
     <Category>
-      <Link active isMenu>sports</Link>
+      <Link isActive isMenu>sports</Link>
       <SubCategory className="subnav">
-        <Link isSub active>shoes</Link>
+        <Link isSub isActive>shoes</Link>
         <Link isSub>clothing</Link>
         <Link isSub>accesories</Link>
       </SubCategory>

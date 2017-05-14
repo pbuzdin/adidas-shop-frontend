@@ -23,7 +23,7 @@ const FilterSelect = styled.button`
   background: transparent;
   padding: 14px 7px;
   cursor: pointer;
-  color: ${props => (props.active ? '#4d42f8' : '#d6d6d6')};
+  color: ${props => (props.isActive ? '#4d42f8' : '#d6d6d6')};
 `;
 
 export default () => (
@@ -34,7 +34,7 @@ export default () => (
     <FilterSelect>38</FilterSelect>
     <FilterSelect>39</FilterSelect>
     <FilterSelect>40</FilterSelect>
-    <FilterSelect active>41</FilterSelect>
+    <FilterSelect isActive>41</FilterSelect>
     <FilterSelect>42</FilterSelect>
   </Sizes>
 );

@@ -10,7 +10,5 @@ const Badge = styled.span`
   color: #ffffff;
   padding: 6px 20px;
   position: absolute;
-  margin-top: 7px;
-  margin-left: 243px;
 `;
 export default () => <Badge className="sale-badge">sale</Badge>;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
+
 import SelectGender from './Filter/SelectGender';
 import SelectSize from './Filter/SelectSize';
 import Card from '../Product/Card';

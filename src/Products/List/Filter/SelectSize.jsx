@@ -16,7 +16,7 @@ const Label = styled.span`
   float: left;
   margin-right: 18px;
 `;
-const FilterSelect = styled.button`
+const Btn = styled.button`
   font-family: 'AvenirNext', Arial;
   font-size: 24px;
   color: #d6d6d6;
@@ -31,12 +31,12 @@ const FilterSelect = styled.button`
 export default () => (
   <SelectSize>
     <Label>size</Label>
-    <FilterSelect>36</FilterSelect>
-    <FilterSelect>37</FilterSelect>
-    <FilterSelect>38</FilterSelect>
-    <FilterSelect>39</FilterSelect>
-    <FilterSelect>40</FilterSelect>
-    <FilterSelect isActive>41</FilterSelect>
-    <FilterSelect>42</FilterSelect>
+    <Btn>36</Btn>
+    <Btn>37</Btn>
+    <Btn>38</Btn>
+    <Btn>39</Btn>
+    <Btn>40</Btn>
+    <Btn isActive>41</Btn>
+    <Btn>42</Btn>
   </SelectSize>
 );

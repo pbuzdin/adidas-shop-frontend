@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './style.css';
 
 import Sidebar from './Sidebar';
-import List from './List';
-import Details from './Product/Details';
+import List from './Products/List';
+import Details from './Products/Product/Details';
 
 export default () => (
   <Router>

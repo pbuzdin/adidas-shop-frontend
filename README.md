@@ -1,6 +1,6 @@
 # Adidas-shop V.2.0
 
- http://imported-beds.surge.sh
+ http://pbuzdin.surge.sh
 
 ```sh
 $ yarn start

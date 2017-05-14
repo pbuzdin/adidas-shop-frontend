@@ -1,8 +1,8 @@
 import React from 'react';
 
-const FilterSelect = (props) => (
+const FilterSelect = props => (
   <button className={props.className}>{props.children}</button>
-)
+);
 
 export default () => (
   <div className="gender">
@@ -17,4 +17,4 @@ export default () => (
       <FilterSelect>42</FilterSelect>
     </div>
   </div>
-)
+);

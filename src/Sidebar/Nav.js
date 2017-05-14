@@ -1,8 +1,8 @@
 import React from 'react';
 
-const NavLink = (props) => (
+const NavLink = props => (
   <a href={props.href} className="category">{props.children}</a>
-)
+);
 
 export default () => (
   <div className="nav">
@@ -15,4 +15,4 @@ export default () => (
     <NavLink href="#">brands</NavLink>
     <NavLink href="#">micoach</NavLink>
   </div>
-)
+);

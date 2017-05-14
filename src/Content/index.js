@@ -1,11 +1,8 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './style.css';
 import List from './List';
-import Details from './Details';
+import Details from './Product/Details';
 
 export default () => (
   <Router>
@@ -14,4 +11,4 @@ export default () => (
       <Route path="/item" component={Details} />
     </div>
   </Router>
-)
+);

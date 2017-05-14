@@ -1,9 +1,5 @@
 import React from 'react';
 
-const Badge = (props) => (
-  <span className="sale-badge">{props.children}</span>
-)
+const Badge = props => <span className="sale-badge">{props.children}</span>;
 
-export default () => (
-  <Badge>sale</Badge>
-)
+export default () => <Badge>sale</Badge>;

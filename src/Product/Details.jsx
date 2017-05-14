@@ -61,23 +61,7 @@ const BtnColor = styled.button`
     margin-left: 13px;
     cursor: pointer;
     background: #c5c5c5;
-  background: ${props => (props.isRed ? '#fff' : '#c5c5c5')};
-  background: ${props => (props.isGreen ? '#fff' : '#4d87ca')};
-  background: ${props => (props.Color3 ? '#fff' : '#4a4a4a')};
-  background: ${props => (props.Color4 ? '#fff' : '#e0e0e0')};
-
-  & button.color1 {
-    background: #c5c5c5;
-  }
-  & button.color2 {
-    background: #4d87ca;
-  }
-  & button.color3 {
-    background: #4a4a4a;
-  }
-  & button.color4 {
-    background: #e0e0e0;
-  }
+    background-color: ${props => (props.color ? `${props.color};` : 'transparent')};
 `;
 const ProductPhotos = styled.div`
   height: 120px;
@@ -160,10 +144,10 @@ export default () => (
     </InfoLeft>
     <InfoRight>
       <SelectColor>
-        <BtnColor isRed />
-        <BtnColor isGreen />
-        <BtnColor Color1 />
-        <BtnColor Color1 />
+        <BtnColor color="#c5c5c5" />
+        <BtnColor color="#4d87ca" />
+        <BtnColor color="#4a4a4a" />
+        <BtnColor color="#e0e0e0" />
       </SelectColor>
       <Badge />
       <Price>170$</Price>

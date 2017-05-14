@@ -1,5 +1,6 @@
 import React from 'react';
 import Badge from '../Badge';
+import './style.css';
 
 export default () => (
   <div className="product sale">

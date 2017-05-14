@@ -1,7 +1,8 @@
 import React from 'react';
+import './style.css';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import SelectGender from '../Filter/SelectGender';
-import SelectSize from '../Filter/SelectSize';
+import SelectGender from './Filter/SelectGender';
+import SelectSize from './Filter/SelectSize';
 import Card from '../Product//Card';
 
 export default () => (

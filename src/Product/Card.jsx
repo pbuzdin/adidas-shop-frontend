@@ -1,8 +1,8 @@
 import React from 'react';
-import Badge from '../Badge';
-// import './style.css';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Badge from '../Badge';
+// import './style.css';
 
 const Card = styled.div`
   background: #f4f4f4;

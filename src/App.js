@@ -2,9 +2,8 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   NavLink,
-  Link,
   Route
-} from 'react-router-dom'
+} from 'react-router-dom';
 import './style.css';
 import './Content/style.css';
 import Sidebar from './Sidebar';
@@ -22,4 +21,4 @@ export default () => (
       </div>
     </div>
   </Router>
-)
+);

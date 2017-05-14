@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "AvenirNext";
+  src: url("fonts/avenir-next-bold.woff");
+}
+
+@font-face {
+  font-family: "AndaleMono";
+  src: url("fonts/Andale-Mono.woff");
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("fonts/avenir-next-medium.woff");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container1 {
+  max-width: 1439px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 75em) {
+  .container {
+    max-width: 65rem;
+  }
+}

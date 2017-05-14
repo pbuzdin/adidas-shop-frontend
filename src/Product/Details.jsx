@@ -57,7 +57,6 @@ const SwitchColor = styled.div`
     border: 0;
     padding: 4px;
     margin-left: 13px;
-    margin-top: 6px;
     cursor: pointer;
     background: #c5c5c5;
   }

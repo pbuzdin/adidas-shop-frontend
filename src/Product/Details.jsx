@@ -66,15 +66,15 @@ const BtnColor = styled.button`
 const ProductPhotos = styled.div`
   height: 120px;
   overflow: hidden;
-  > img {
-    max-height: 120px;
-    border: 5px solid transparent;
-    cursor: pointer;
-  }
-  color: ${props => (props.isActive ? '#fff' : '#3c3c3c')};
-  > img.current {
-    border: 5px solid #e8e8ea;
-  }
+`;
+const PhotoBig = styled.img`
+  max-width: 100%;
+`;
+const PhotoSmall = styled.img`
+  max-height: 120px;
+  border: 5px solid transparent;
+  cursor: pointer;
+  border-color: ${props => (props.isActive ? '#e8e8ea' : 'transparent')};
 `;
 const Triple = styled.div`
   width: 159px;
@@ -152,12 +152,12 @@ export default () => (
       <Badge />
       <Price>170$</Price>
     </InfoRight>
-    <img src={require('./img/product3-4.jpg')} className="photo-show" alt="" />
+    <PhotoBig src={require('./img/product3-4.jpg')} alt="" />
     <ProductPhotos>
-      <img src={require('./img/product3-1.jpg')} alt="" />
-      <img src={require('./img/product3-2.jpg')} alt="" />
-      <img src={require('./img/product3-3.jpg')} alt="" />
-      <img src={require('./img/product3-4.jpg')} className="current" alt="" />
+      <PhotoSmall src={require('./img/product3-1.jpg')} alt="" />
+      <PhotoSmall src={require('./img/product3-2.jpg')} alt="" />
+      <PhotoSmall src={require('./img/product3-3.jpg')} alt="" />
+      <PhotoSmall src={require('./img/product3-4.jpg')} alt="" isActive />
       <Triple />
       <MorePhotos>see more photos</MorePhotos>
     </ProductPhotos>

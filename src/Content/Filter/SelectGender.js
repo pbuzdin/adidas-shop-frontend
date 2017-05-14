@@ -6,7 +6,7 @@ const FilterSelect = (props) => (
 
 export default () => (
   <div className="gender">
-    <img src={require("./img/filter.svg")} className="filter-icon" alt="" />
+    <img src={require("./filter.svg")} className="filter-icon" alt="" />
     <div className="gender-switch">
       <FilterSelect className="active">Man</FilterSelect>
       <FilterSelect>Woman</FilterSelect>

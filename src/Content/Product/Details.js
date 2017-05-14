@@ -1,5 +1,5 @@
 import React from 'react';
-import Badge from './Badge';
+import Badge from '../Badge';
 
 const ProductName = (props) => (
   <h1 className="product-title">{props.children}</h1>

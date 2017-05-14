@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
-import SelectGender from './SelectGender';
-import SelectSize from './SelectSize';
-import Card from './Card';
+import SelectGender from '../Filter/SelectGender';
+import SelectSize from '../Filter/SelectSize';
+import Card from '../Product//Card';
 
 export default () => (
   <div className="products-grid">

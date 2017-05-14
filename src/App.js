@@ -9,7 +9,7 @@ import './style.css';
 import './Content/style.css';
 import Sidebar from './Sidebar';
 import List from './Content/List';
-import Details from './Content/Details';
+import Details from './Content/Product/Details';
 
 export default () => (
   <Router>

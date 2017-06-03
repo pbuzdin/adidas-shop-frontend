@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import Badge from '../components/Badge';
+import ProductPhotos from './ProductPhotos';
 
-const Product = styled.div`
-  background: #fff;
+const Container = styled.div`
   margin-top: 26px;
   padding-left: 26px;
+`;
+const Product = styled.div`
+  background: #fff;
   float: left;
   width: 60%;
   min-width: 1025px;
@@ -63,38 +66,9 @@ const BtnColor = styled.button`
     background: #c5c5c5;
     background-color: ${props => (props.color ? `${props.color};` : 'transparent')};
 `;
-const ProductPhotos = styled.div`
-  height: 120px;
-  overflow: hidden;
-`;
 const PhotoBig = styled.img`
-  max-width: 100%;
-`;
-const PhotoSmall = styled.img`
-  max-height: 120px;
-  border: 5px solid transparent;
-  cursor: pointer;
-  border-color: ${props => (props.isActive ? '#e8e8ea' : 'transparent')};
-`;
-const Triple = styled.div`
-  width: 159px;
-  height: 18px;
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAGCAYAAAACEPQxAAAAFUlEQVQYV2NgAIHnz5//RyLAYiAAAMIcCx2s9l//AAAAAElFTkSuQmCC') repeat;
-  display: inline-block;
-  vertical-align: 52px;
-  margin: 0 28px;
-`;
-const MorePhotos = styled.div`
-  width: 45px;
-  height: 57px;
-  font-family: 'Avenir', Arial;
-  font-size: 14px;
-  font-weight: 500;
-  color: #c0c0c0;
-  text-decoration: none;
-  display: inline-block;
-  vertical-align: 40px;
-  cursor: pointer
+    width: 100%;
+    max-height: 650px;
 `;
 const Price = styled.div`
   font-size: 80px;
@@ -136,40 +110,77 @@ const BtnLarge = styled.button`
   bottom: 0;
 `;
 
-export default () => (
-  <Product>
-    <InfoLeft>
-      <ProductName>Ultra Boost</ProductName>
-      <BtnRound>save</BtnRound>
-    </InfoLeft>
-    <InfoRight>
-      <SelectColor>
-        <BtnColor color="#c5c5c5" />
-        <BtnColor color="#4d87ca" />
-        <BtnColor color="#4a4a4a" />
-        <BtnColor color="#e0e0e0" />
-      </SelectColor>
-      <Badge />
-      <Price>170$</Price>
-    </InfoRight>
-    <PhotoBig src={require('./img/product3-4.jpg')} alt="" />
-    <ProductPhotos>
-      <PhotoSmall src={require('./img/product3-1.jpg')} alt="" />
-      <PhotoSmall src={require('./img/product3-2.jpg')} alt="" />
-      <PhotoSmall src={require('./img/product3-3.jpg')} alt="" />
-      <PhotoSmall src={require('./img/product3-4.jpg')} alt="" isActive />
-      <Triple />
-      <MorePhotos>see more photos</MorePhotos>
-    </ProductPhotos>
-    <ProductDesc>
-      <a href="#test">Adidas</a>
-      {' '}
-      is a German multinational corporation,
-      <br />
-      headquartered in Herzogenaurach, Germany, that
-      designs<br />and manufactures shoes, clothing and accessories.
-    </ProductDesc>
+const photos = [
+  {
+    id: 1,
+    src: require('./img/product1.jpg'),
+  },
+  {
+    id: 2,
+    src: require('./img/product2.jpg'),
+  },
+  {
+    id: 3,
+    src: require('./img/product3.jpg'),
+  },
+  {
+    id: 4,
+    src: require('./img/product2.jpg'),
+  },
+  {
+    id: 5,
+    src: require('./img/product1.jpg'),
+  },
+];
 
-    <BtnLarge>buy now</BtnLarge>
-  </Product>
-);
+class Details extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { currentPhoto: 0 };
+    this.selectProductPhoto = this.selectProductPhoto.bind(this);
+  }
+
+  selectProductPhoto(currentPhoto) {
+    this.setState({ currentPhoto });
+  }
+
+  render() {
+    return (
+      <Product>
+        <Container>
+          <InfoLeft>
+            <ProductName>Ultra Boost</ProductName>
+            <BtnRound>save</BtnRound>
+          </InfoLeft>
+          <InfoRight>
+            <SelectColor>
+              <BtnColor color="#c5c5c5" />
+              <BtnColor color="#4d87ca" />
+              <BtnColor color="#4a4a4a" />
+              <BtnColor color="#e0e0e0" />
+            </SelectColor>
+            <Badge />
+            <Price>170$</Price>
+          </InfoRight>
+          <PhotoBig src={photos[this.state.currentPhoto].src} alt="" />
+          <ProductPhotos
+            photos={photos}
+            onClick={this.selectProductPhoto}
+            currentPhoto={this.state.currentPhoto}
+          />
+          <ProductDesc>
+            <a href="#test">Adidas</a>
+            {' '}
+            is a German multinational corporation,
+            <br />
+            headquartered in Herzogenaurach, Germany, that
+            designs<br />and manufactures shoes, clothing and accessories.
+          </ProductDesc>
+        </Container>
+        <BtnLarge>buy now</BtnLarge>
+      </Product>
+    );
+  }
+}
+
+export default Details;

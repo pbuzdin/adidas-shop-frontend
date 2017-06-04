@@ -7,7 +7,7 @@ const SubCategory = styled.div`
   margin-bottom: 50px;
 `;
 
-const CategoryItem = styled.div`
+const Button = styled.div`
   font-size: 24px;
   text-transform: uppercase;
   text-decoration: none;
@@ -47,9 +47,9 @@ class Category extends Component {
   render() {
     return (
       <div>
-        <CategoryItem isActive={this.state.isOpened} onClick={this.handleClick}>
+        <Button isActive={this.state.isOpened} onClick={this.handleClick}>
           {this.props.title}
-        </CategoryItem>
+        </Button>
         {this.state.isOpened &&
           <SubCategory>{this.props.children}</SubCategory>}
       </div>

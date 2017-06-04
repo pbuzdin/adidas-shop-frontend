@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ProductPhotos = styled.div`
+const Photos = styled.div`
   height: 120px;
   overflow: hidden;
 `;
@@ -13,7 +13,7 @@ const PhotoSmall = styled.img`
 `;
 
 export default props => (
-  <ProductPhotos>
+  <Photos>
     {props.photos.map((image, index) => (
       <PhotoSmall
         src={image.src}
@@ -23,5 +23,5 @@ export default props => (
         isActive={index === props.currentPhoto}
       />
     ))}
-  </ProductPhotos>
+  </Photos>
 );

@@ -150,12 +150,12 @@ class Details extends Component {
             <ProductName>Ultra Boost</ProductName>
             <BtnRound color={colors[this.state.currentColor]}>
             save
-          </BtnRound>
-        </InfoLeft>
-        <InfoRight>
-          <SelectColor>
-            <BtnColor colors={colors} onChange={this.handleColorSwitch} />
-          </SelectColor>
+            </BtnRound>
+          </InfoLeft>
+          <InfoRight>
+            <SelectColor>
+              <BtnColor colors={colors} onChange={this.handleColorSwitch} />
+            </SelectColor>
             <Badge />
             <Price>170$</Price>
           </InfoRight>

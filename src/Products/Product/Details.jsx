@@ -96,7 +96,7 @@ const Price = styled.div`
   text-align: right;
   font-family: 'AvenirNext', Arial;
 `;
-const Desc = styled.p`
+const Description = styled.p`
   font-family: 'Avenir', Arial;
   font-size: 33px;
   font-weight: 500;
@@ -164,14 +164,14 @@ class Details extends Component {
           <Triple />
           <MorePhotos>see more photos</MorePhotos>
         </Photos>
-        <Desc>
+        <Description>
           <a href="#test">Adidas</a>
           {' '}
           is a German multinational corporation,
           <br />
           headquartered in Herzogenaurach, Germany, that
           designs<br />and manufactures shoes, clothing and accessories.
-        </Desc>
+        </Description>
 
         <BtnLarge>buy now</BtnLarge>
       </Product>

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import Badge from '../components/Badge';
+import BtnColor from './BtnColor';
 
 const Product = styled.div`
   background: #fff;
@@ -36,7 +37,7 @@ const ProductName = styled.div`
   max-width: 230px;
 `;
 const BtnRound = styled.button`
-  background: #e3e3e3;
+  background: ${props => props.color};
   border-radius: 75px;
   width: 75px;
   height: 75px;
@@ -53,17 +54,17 @@ const SelectColor = styled.div`
   margin-top: 6px;
 `;
 const BtnColor = styled.button`
-    width: 18px;
-    height: 18px;
-    border-radius: 18px;
-    border: 0;
-    padding: 4px;
-    margin-left: 13px;
-    cursor: pointer;
-    background: #c5c5c5;
-    background-color: ${props => (props.color ? `${props.color};` : 'transparent')};
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  border: 0;
+  padding: 4px;
+  margin-left: 13px;
+  cursor: pointer;
+  background: #c5c5c5;
+  background-color: ${props => (props.color ? `${props.color};` : 'transparent')};
 `;
-const ProductPhotos = styled.div`
+const Photos = styled.div`
   height: 120px;
   overflow: hidden;
 `;
@@ -98,7 +99,7 @@ const MorePhotos = styled.div`
 `;
 const Price = styled.div`
   font-size: 80px;
-  color: #e2e2e2;
+  color: ${props => props.color};
   display: block;
   padding: 0;
   margin: 26px 0 0 0;
@@ -106,7 +107,7 @@ const Price = styled.div`
   text-align: right;
   font-family: 'AvenirNext', Arial;
 `;
-const ProductDesc = styled.p`
+const Desc = styled.p`
   font-family: 'Avenir', Arial;
   font-size: 33px;
   font-weight: 500;
@@ -136,40 +137,57 @@ const BtnLarge = styled.button`
   bottom: 0;
 `;
 
-export default () => (
-  <Product>
-    <InfoLeft>
-      <ProductName>Ultra Boost</ProductName>
-      <BtnRound>save</BtnRound>
-    </InfoLeft>
-    <InfoRight>
-      <SelectColor>
-        <BtnColor color="#c5c5c5" />
-        <BtnColor color="#4d87ca" />
-        <BtnColor color="#4a4a4a" />
-        <BtnColor color="#e0e0e0" />
-      </SelectColor>
-      <Badge />
-      <Price>170$</Price>
-    </InfoRight>
-    <PhotoBig src={require('./img/product3-4.jpg')} alt="" />
-    <ProductPhotos>
-      <PhotoSmall src={require('./img/product3-1.jpg')} alt="" />
-      <PhotoSmall src={require('./img/product3-2.jpg')} alt="" />
-      <PhotoSmall src={require('./img/product3-3.jpg')} alt="" />
-      <PhotoSmall src={require('./img/product3-4.jpg')} alt="" isActive />
-      <Triple />
-      <MorePhotos>see more photos</MorePhotos>
-    </ProductPhotos>
-    <ProductDesc>
-      <a href="#test">Adidas</a>
-      {' '}
-      is a German multinational corporation,
-      <br />
-      headquartered in Herzogenaurach, Germany, that
-      designs<br />and manufactures shoes, clothing and accessories.
-    </ProductDesc>
+const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
 
-    <BtnLarge>buy now</BtnLarge>
-  </Product>
-);
+class Details extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { currentColor: 0 };
+    this.handleColorSwitch = this.handleColorSwitch.bind(this);
+  }
+
+  handleColorSwitch(currentColor) {
+    this.setState({ currentColor });
+  }
+
+  render() {
+    return (
+      <Product>
+        <InfoLeft>
+          <ProductName>Ultra Boost</ProductName>
+          <BtnRound color={colors[this.state.currentColor]}>
+            save
+          </BtnRound>
+        </InfoLeft>
+        <InfoRight>
+          <SelectColor>
+            <BtnColor colors={colors} onChange={this.handleColorSwitch} />
+          </SelectColor>
+          <Badge />
+          <Price color={colors[this.state.currentColor]}>170$</Price>
+        </InfoRight>
+        <PhotoBig src={require('./img/product3-4.jpg')} alt="" />
+        <Photos>
+          <PhotoSmall src={require('./img/product3-1.jpg')} alt="" />
+          <PhotoSmall src={require('./img/product3-2.jpg')} alt="" />
+          <PhotoSmall src={require('./img/product3-3.jpg')} alt="" />
+          <PhotoSmall src={require('./img/product3-4.jpg')} alt="" isActive />
+          <Triple />
+          <MorePhotos>see more photos</MorePhotos>
+        </Photos>
+        <Desc>
+          <a href="#test">Adidas</a>
+          {' '}
+          is a German multinational corporation,
+          <br />
+          headquartered in Herzogenaurach, Germany, that
+          designs<br />and manufactures shoes, clothing and accessories.
+        </Desc>
+
+        <BtnLarge>buy now</BtnLarge>
+      </Product>
+    );
+  }
+}
+
+export default Details;

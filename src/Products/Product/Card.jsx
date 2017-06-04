@@ -6,18 +6,19 @@ import Badge from '../components/Badge';
 
 const Card = styled.div`
   background: #f4f4f4;
-  padding: 8px 6px;
+  padding: 9px;
   margin-bottom: 24px;
+  position: relative;
   & img {
     width: 100%;
+    display: block;
   }
   > .sale-badge {
     position: absolute;
-    margin-top: 7px;
-    margin-left: 243px;
+    top: 17px;
+    right: 17px;
   }
 `;
-
 const Price = styled(Link)`
   display: block;
   padding: 23px 0 27px 0;

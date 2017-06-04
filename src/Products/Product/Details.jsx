@@ -128,12 +128,12 @@ const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
 class Details extends Component {
   constructor(props) {
     super(props);
-    this.state = { photoIndex: 0 };
+    this.state = { photoId: 0 };
     this.handleProductPhoto = this.handleProductPhoto.bind(this);
   }
 
-  handleProductPhoto(photoIndex) {
-    this.setState({ photoIndex });
+  handleProductPhoto(photoId) {
+    this.setState({ photoId });
     this.handleColorSwitch = this.handleColorSwitch.bind(this);
   }
 
@@ -158,11 +158,11 @@ class Details extends Component {
             <Badge />
             <Price color={colors[this.state.currentColor]}>170$</Price>
           </InfoRight>
-          <PhotoBig src={photos[this.state.photoIndex].src} alt="" />
+          <PhotoBig src={photos[this.state.photoId].src} alt="" />
           <Photos
             photos={photos}
             onClick={this.handleProductPhoto}
-            photoIndex={this.state.photoIndex}
+            photoId={this.state.photoId}
           />
           <Description>
             <a href="#test">Adidas</a>

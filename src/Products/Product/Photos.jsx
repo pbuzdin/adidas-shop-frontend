@@ -20,7 +20,7 @@ export default props => (
         alt=""
         key={image.id}
         onClick={() => props.onClick(index)}
-        isActive={index === props.photoIndex}
+        isActive={index === props.photoId}
       />
     ))}
   </Photos>

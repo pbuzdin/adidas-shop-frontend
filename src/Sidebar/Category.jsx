@@ -7,7 +7,7 @@ const SubCategory = styled.div`
   margin-bottom: 50px;
 `;
 
-const Button = styled.div`
+const Button = styled.button`
   font-size: 24px;
   text-transform: uppercase;
   text-decoration: none;
@@ -17,6 +17,13 @@ const Button = styled.div`
   color: #fff;
   margin-bottom: 32px;
   cursor: pointer;
+  border: 0;
+  background: none;
+  margin-left: auto;
+  margin-right: auto;
+  &:focus {
+    outline: none;
+  }
   &:after {
     content: '';
     position: absolute;

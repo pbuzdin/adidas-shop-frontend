@@ -53,6 +53,17 @@ const SelectColor = styled.div`
   display: inline-block;
   margin-top: 6px;
 `;
+const BtnColor = styled.button`
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  border: 0;
+  padding: 4px;
+  margin-left: 13px;
+  cursor: pointer;
+  background: #c5c5c5;
+  background-color: ${props => (props.color ? `${props.color};` : 'transparent')};
+`;
 const Photos = styled.div`
   height: 120px;
   overflow: hidden;

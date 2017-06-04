@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import Badge from '../components/Badge';
+import Photos from './Photos';
 import BtnColor from './BtnColor';
 
-const Product = styled.div`
-  background: #fff;
+const Container = styled.div`
   margin-top: 26px;
   padding-left: 26px;
+`;
+const Product = styled.div`
+  background: #fff;
   float: left;
   width: 60%;
   min-width: 1025px;
@@ -53,49 +56,9 @@ const SelectColor = styled.div`
   display: inline-block;
   margin-top: 6px;
 `;
-const BtnColor = styled.button`
-  width: 18px;
-  height: 18px;
-  border-radius: 18px;
-  border: 0;
-  padding: 4px;
-  margin-left: 13px;
-  cursor: pointer;
-  background: #c5c5c5;
-  background-color: ${props => (props.color ? `${props.color};` : 'transparent')};
-`;
-const Photos = styled.div`
-  height: 120px;
-  overflow: hidden;
-`;
 const PhotoBig = styled.img`
-  max-width: 100%;
-`;
-const PhotoSmall = styled.img`
-  max-height: 120px;
-  border: 5px solid transparent;
-  cursor: pointer;
-  border-color: ${props => (props.isActive ? '#e8e8ea' : 'transparent')};
-`;
-const Triple = styled.div`
-  width: 159px;
-  height: 18px;
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAGCAYAAAACEPQxAAAAFUlEQVQYV2NgAIHnz5//RyLAYiAAAMIcCx2s9l//AAAAAElFTkSuQmCC') repeat;
-  display: inline-block;
-  vertical-align: 52px;
-  margin: 0 28px;
-`;
-const MorePhotos = styled.div`
-  width: 45px;
-  height: 57px;
-  font-family: 'Avenir', Arial;
-  font-size: 14px;
-  font-weight: 500;
-  color: #c0c0c0;
-  text-decoration: none;
-  display: inline-block;
-  vertical-align: 40px;
-  cursor: pointer
+    width: 100%;
+    max-height: 650px;
 `;
 const Price = styled.div`
   font-size: 80px;
@@ -137,11 +100,40 @@ const BtnLarge = styled.button`
   bottom: 0;
 `;
 
+const photos = [
+  {
+    id: 1,
+    src: require('./img/product1.jpg'),
+  },
+  {
+    id: 2,
+    src: require('./img/product2.jpg'),
+  },
+  {
+    id: 3,
+    src: require('./img/product3.jpg'),
+  },
+  {
+    id: 4,
+    src: require('./img/product2.jpg'),
+  },
+  {
+    id: 5,
+    src: require('./img/product1.jpg'),
+  },
+];
+
 const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
 
 class Details extends Component {
   constructor(props) {
     super(props);
+    this.state = { currentPhoto: 0 };
+    this.selectProductPhoto = this.selectProductPhoto.bind(this);
+  }
+
+  selectProductPhoto(currentPhoto) {
+    this.setState({ currentPhoto });
     this.state = { currentColor: 0 };
     this.handleColorSwitch = this.handleColorSwitch.bind(this);
   }
@@ -153,37 +145,35 @@ class Details extends Component {
   render() {
     return (
       <Product>
-        <InfoLeft>
-          <ProductName>Ultra Boost</ProductName>
-          <BtnRound color={colors[this.state.currentColor]}>
+        <Container>
+          <InfoLeft>
+            <ProductName>Ultra Boost</ProductName>
+            <BtnRound color={colors[this.state.currentColor]}>
             save
-          </BtnRound>
-        </InfoLeft>
-        <InfoRight>
-          <SelectColor>
-            <BtnColor colors={colors} onChange={this.handleColorSwitch} />
-          </SelectColor>
-          <Badge />
-          <Price color={colors[this.state.currentColor]}>170$</Price>
-        </InfoRight>
-        <PhotoBig src={require('./img/product3-4.jpg')} alt="" />
-        <Photos>
-          <PhotoSmall src={require('./img/product3-1.jpg')} alt="" />
-          <PhotoSmall src={require('./img/product3-2.jpg')} alt="" />
-          <PhotoSmall src={require('./img/product3-3.jpg')} alt="" />
-          <PhotoSmall src={require('./img/product3-4.jpg')} alt="" isActive />
-          <Triple />
-          <MorePhotos>see more photos</MorePhotos>
-        </Photos>
-        <Desc>
-          <a href="#test">Adidas</a>
-          {' '}
-          is a German multinational corporation,
-          <br />
-          headquartered in Herzogenaurach, Germany, that
-          designs<br />and manufactures shoes, clothing and accessories.
-        </Desc>
-
+            </BtnRound>
+          </InfoLeft>
+          <InfoRight>
+            <SelectColor>
+              <BtnColor colors={colors} onChange={this.handleColorSwitch} />
+            </SelectColor>
+            <Badge />
+            <Price>170$</Price>
+          </InfoRight>
+          <PhotoBig src={photos[this.state.currentPhoto].src} alt="" />
+          <Photos
+            photos={photos}
+            onClick={this.selectProductPhoto}
+            currentPhoto={this.state.currentPhoto}
+          />
+          <Desc>
+            <a href="#test">Adidas</a>
+            {' '}
+            is a German multinational corporation,
+            <br />
+            headquartered in Herzogenaurach, Germany, that
+            designs<br />and manufactures shoes, clothing and accessories.
+          </Desc>
+        </Container>
         <BtnLarge>buy now</BtnLarge>
       </Product>
     );

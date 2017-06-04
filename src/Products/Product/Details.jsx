@@ -53,7 +53,7 @@ const SelectColor = styled.div`
   display: inline-block;
   margin-top: 6px;
 `;
-const ProductPhotos = styled.div`
+const Photos = styled.div`
   height: 120px;
   overflow: hidden;
 `;
@@ -96,7 +96,7 @@ const Price = styled.div`
   text-align: right;
   font-family: 'AvenirNext', Arial;
 `;
-const ProductDesc = styled.p`
+const Desc = styled.p`
   font-family: 'Avenir', Arial;
   font-size: 33px;
   font-weight: 500;
@@ -125,16 +125,20 @@ const BtnLarge = styled.button`
   max-width: 1025px;
   bottom: 0;
 `;
+
 const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
+
 class Details extends Component {
   constructor(props) {
     super(props);
     this.state = { currentColor: 0 };
     this.handleColorSwitch = this.handleColorSwitch.bind(this);
   }
+
   handleColorSwitch(currentColor) {
     this.setState({ currentColor });
   }
+
   render() {
     return (
       <Product>
@@ -152,22 +156,22 @@ class Details extends Component {
           <Price color={colors[this.state.currentColor]}>170$</Price>
         </InfoRight>
         <PhotoBig src={require('./img/product3-4.jpg')} alt="" />
-        <ProductPhotos>
+        <Photos>
           <PhotoSmall src={require('./img/product3-1.jpg')} alt="" />
           <PhotoSmall src={require('./img/product3-2.jpg')} alt="" />
           <PhotoSmall src={require('./img/product3-3.jpg')} alt="" />
           <PhotoSmall src={require('./img/product3-4.jpg')} alt="" isActive />
           <Triple />
           <MorePhotos>see more photos</MorePhotos>
-        </ProductPhotos>
-        <ProductDesc>
+        </Photos>
+        <Desc>
           <a href="#test">Adidas</a>
           {' '}
           is a German multinational corporation,
           <br />
           headquartered in Herzogenaurach, Germany, that
           designs<br />and manufactures shoes, clothing and accessories.
-        </ProductDesc>
+        </Desc>
 
         <BtnLarge>buy now</BtnLarge>
       </Product>

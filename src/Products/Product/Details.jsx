@@ -56,10 +56,6 @@ const SelectColor = styled.div`
   display: inline-block;
   margin-top: 6px;
 `;
-const Photos = styled.div`
-  height: 120px;
-  overflow: hidden;
-`;
 const PhotoBig = styled.img`
     width: 100%;
     max-height: 650px;

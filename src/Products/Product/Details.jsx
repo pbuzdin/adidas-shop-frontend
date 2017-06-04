@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import Badge from '../components/Badge';
-import ProductPhotos from './ProductPhotos';
+import Photos from './Photos';
+import BtnColor from './BtnColor';
 
 const Container = styled.div`
   margin-top: 26px;
@@ -39,7 +40,7 @@ const ProductName = styled.div`
   max-width: 230px;
 `;
 const BtnRound = styled.button`
-  background: #e3e3e3;
+  background: ${props => props.color};
   border-radius: 75px;
   width: 75px;
   height: 75px;
@@ -56,15 +57,19 @@ const SelectColor = styled.div`
   margin-top: 6px;
 `;
 const BtnColor = styled.button`
-    width: 18px;
-    height: 18px;
-    border-radius: 18px;
-    border: 0;
-    padding: 4px;
-    margin-left: 13px;
-    cursor: pointer;
-    background: #c5c5c5;
-    background-color: ${props => (props.color ? `${props.color};` : 'transparent')};
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  border: 0;
+  padding: 4px;
+  margin-left: 13px;
+  cursor: pointer;
+  background: #c5c5c5;
+  background-color: ${props => (props.color ? `${props.color};` : 'transparent')};
+`;
+const Photos = styled.div`
+  height: 120px;
+  overflow: hidden;
 `;
 const PhotoBig = styled.img`
     width: 100%;
@@ -72,7 +77,7 @@ const PhotoBig = styled.img`
 `;
 const Price = styled.div`
   font-size: 80px;
-  color: #e2e2e2;
+  color: ${props => props.color};
   display: block;
   padding: 0;
   margin: 26px 0 0 0;
@@ -80,7 +85,7 @@ const Price = styled.div`
   text-align: right;
   font-family: 'AvenirNext', Arial;
 `;
-const ProductDesc = styled.p`
+const Desc = styled.p`
   font-family: 'Avenir', Arial;
   font-size: 33px;
   font-weight: 500;
@@ -133,6 +138,8 @@ const photos = [
   },
 ];
 
+const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
+
 class Details extends Component {
   constructor(props) {
     super(props);
@@ -142,6 +149,12 @@ class Details extends Component {
 
   selectProductPhoto(currentPhoto) {
     this.setState({ currentPhoto });
+    this.state = { currentColor: 0 };
+    this.handleColorSwitch = this.handleColorSwitch.bind(this);
+  }
+
+  handleColorSwitch(currentColor) {
+    this.setState({ currentColor });
   }
 
   render() {
@@ -150,32 +163,31 @@ class Details extends Component {
         <Container>
           <InfoLeft>
             <ProductName>Ultra Boost</ProductName>
-            <BtnRound>save</BtnRound>
-          </InfoLeft>
-          <InfoRight>
-            <SelectColor>
-              <BtnColor color="#c5c5c5" />
-              <BtnColor color="#4d87ca" />
-              <BtnColor color="#4a4a4a" />
-              <BtnColor color="#e0e0e0" />
-            </SelectColor>
+            <BtnRound color={colors[this.state.currentColor]}>
+            save
+          </BtnRound>
+        </InfoLeft>
+        <InfoRight>
+          <SelectColor>
+            <BtnColor colors={colors} onChange={this.handleColorSwitch} />
+          </SelectColor>
             <Badge />
             <Price>170$</Price>
           </InfoRight>
           <PhotoBig src={photos[this.state.currentPhoto].src} alt="" />
-          <ProductPhotos
+          <Photos
             photos={photos}
             onClick={this.selectProductPhoto}
             currentPhoto={this.state.currentPhoto}
           />
-          <ProductDesc>
+          <Desc>
             <a href="#test">Adidas</a>
             {' '}
             is a German multinational corporation,
             <br />
             headquartered in Herzogenaurach, Germany, that
             designs<br />and manufactures shoes, clothing and accessories.
-          </ProductDesc>
+          </Desc>
         </Container>
         <BtnLarge>buy now</BtnLarge>
       </Product>

@@ -129,12 +129,11 @@ class Details extends Component {
   constructor(props) {
     super(props);
     this.state = { currentPhoto: 0 };
-    this.selectProductPhoto = this.selectProductPhoto.bind(this);
+    this.handleProductPhoto = this.handleProductPhoto.bind(this);
   }
 
-  selectProductPhoto(currentPhoto) {
+  handleProductPhoto(currentPhoto) {
     this.setState({ currentPhoto });
-    this.state = { currentColor: 0 };
     this.handleColorSwitch = this.handleColorSwitch.bind(this);
   }
 
@@ -149,7 +148,7 @@ class Details extends Component {
           <InfoLeft>
             <ProductName>Ultra Boost</ProductName>
             <BtnRound color={colors[this.state.currentColor]}>
-            save
+              save
             </BtnRound>
           </InfoLeft>
           <InfoRight>
@@ -162,7 +161,7 @@ class Details extends Component {
           <PhotoBig src={photos[this.state.currentPhoto].src} alt="" />
           <Photos
             photos={photos}
-            onClick={this.selectProductPhoto}
+            onClick={this.handleProductPhoto}
             currentPhoto={this.state.currentPhoto}
           />
           <Desc>

@@ -1,63 +1,64 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-import ArrowDown from './img/arrow-down-icon.svg';
+import Category from './Category';
 
-const Nav = styled.div`
+const Sports = styled.div`
   margin-top: 148px;
 `;
-const Category = styled.div`
-  margin-bottom: 32px;
-`;
-const SubCategory = styled.div`
 
-`;
-const Link = styled.div`
+const Link = styled(NavLink)`
   font-size: 24px;
   text-transform: uppercase;
   text-decoration: none;
   display: block;
   text-align: center;
-  font-family: 'AvenirNext', Arial;
-  margin-bottom: 32px;
   font-weight: bold;
-  color: #303030;
-  margin-bottom: 32px;
-  ${props => props.isSub && `
-    font-size: 24px;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    font-weight: bold;
-    font-family: 'AndaleMono', Arial;
-    margin-bottom: 26px;
-  `}
-  ${props => props.isMenu && `
-    &::after {
-      content: '';
-      position: absolute;
-      width: 14px;
-      height: 9px;
-      margin-top: 10px;
-      margin-left: 7px;
-      background: url(${ArrowDown}) no-repeat;
-    }
-  `}
-  color: ${props => (props.isActive ? '#fff' : '#3c3c3c')};
+  font-family: 'AndaleMono', Arial;
+  margin-bottom: 26px;
+  color: #3c3c3c;
+  &.active {
+    color: #fff;
+  }
 `;
 
-export default () => (
-  <Nav>
-    <Category>
-      <Link isActive isMenu>sports</Link>
-      <SubCategory className="subnav">
-        <Link isSub isActive>shoes</Link>
-        <Link isSub>clothing</Link>
-        <Link isSub>accesories</Link>
-      </SubCategory>
-    </Category>
-    <Category><Link>brands</Link></Category>
-    <Category><Link>micoach</Link></Category>
-  </Nav>
-);
+class Nav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { isOpened: false };
+    this.openCategory = this.openCategory.bind(this);
+  }
+
+  openCategory() {
+    this.setState(prevState => ({
+      isOpened: !prevState.isOpened,
+    }));
+  }
+
+  render() {
+    return (
+      <div>
+        <Sports>
+          <Category title="Football">
+            <Link to="/products/football/shoes">Shoes</Link>
+            <Link to="/products/football/clothing">Clothing</Link>
+            <Link to="/products/football/accesories">Accesories</Link>
+          </Category>
+          <Category title="Running">
+            <Link to="/products/running/shoes">Shoes</Link>
+            <Link to="/products/running/clothing">Clothing</Link>
+            <Link to="/products/running/accesories">Accesories</Link>
+          </Category>
+          <Category title="Basketball">
+            <Link to="/products/basketball/shoes">Shoes</Link>
+            <Link to="/products/basketball/clothing">Clothing</Link>
+            <Link to="/products/basketball/accesories">Accesories</Link>
+          </Category>
+        </Sports>
+      </div>
+    );
+  }
+}
+
+export default Nav;

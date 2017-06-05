@@ -19,36 +19,36 @@ export default () => (
     <Filter />
     <Grid>
       <Row>
-        <Col xs={12} sm={6} lg={4}>
-          <Card to="/products/football/shoes/ultraboost" />
+        <Col xs={4}>
+          <Card />
         </Col>
-        <Col xs={12} sm={6} lg={4}>
-          <Card to="/products/football/shoes/ultraboost" />
+        <Col xs={4}>
+          <Card />
         </Col>
-        <Col xs={12} sm={6} lg={4}>
-          <Card to="/products/football/shoes/ultraboost" />
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={12} sm={6} lg={4}>
-          <Card to="/products/football/shoes/ultraboost" />
-        </Col>
-        <Col xs={12} sm={6} lg={4}>
-          <Card to="/products/football/shoes/ultraboost" />
-        </Col>
-        <Col xs={12} sm={6} lg={4}>
-          <Card to="/products/football/shoes/ultraboost" />
+        <Col xs={4}>
+          <Card />
         </Col>
       </Row>
       <Row>
-        <Col xs={12} sm={6} lg={4}>
-          <Card to="/products/football/shoes/ultraboost" />
+        <Col xs={4}>
+          <Card />
         </Col>
-        <Col xs={12} sm={6} lg={4}>
-          <Card to="/products/football/shoes/ultraboost" />
+        <Col xs={4}>
+          <Card />
         </Col>
-        <Col xs={12} sm={6} lg={4}>
-          <Card to="/products/football/shoes/ultraboost" />
+        <Col xs={4}>
+          <Card />
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={4}>
+          <Card />
+        </Col>
+        <Col xs={4}>
+          <Card />
+        </Col>
+        <Col xs={4}>
+          <Card />
         </Col>
       </Row>
     </Grid>

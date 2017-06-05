@@ -13,12 +13,7 @@ export default () => (
       <Sidebar />
       <div className="content">
         <Route exact path="/" component={List} />
-        <Route exact path="/products/:section/:category" component={List} />
-        <Route
-          exact
-          path="/products/:section/:category/:id"
-          component={Details}
-        />
+        <Route path="/item" component={Details} />
       </div>
     </div>
   </Router>

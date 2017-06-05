@@ -17,7 +17,7 @@ export default props => (
     {props.photos.map((image, index) => (
       <PhotoSmall
         src={image.src}
-        alt=""
+        alt="ultra boost"
         key={image.id}
         onClick={() => props.onClick(index)}
         isActive={index === props.photoId}

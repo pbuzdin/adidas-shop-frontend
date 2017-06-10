@@ -48,7 +48,6 @@ const BtnRound = styled.button`
   color: #fff;
   font-family: 'AvenirNext', Arial;
   font-size: 18px;
-  font-weight: bold;
   text-transform: uppercase;
   margin-top: 14px;
 `;
@@ -96,7 +95,7 @@ const BtnLarge = styled.button`
   margin-top: 176px;
   cursor: pointer;
   position: fixed;
-  max-width: 1025px;
+  max-width: 1055px;
   bottom: 0;
 `;
 
@@ -128,13 +127,16 @@ const colors = ['#c5c5c5', '#4d87ca', '#4a4a4a', '#e0e0e0'];
 class Details extends Component {
   constructor(props) {
     super(props);
-    this.state = { photoId: 0 };
+    this.state = {
+      photoId: 0,
+      currentColor: 0
+    };
     this.handleProductPhoto = this.handleProductPhoto.bind(this);
+    this.handleColorSwitch = this.handleColorSwitch.bind(this);
   }
 
   handleProductPhoto(photoId) {
     this.setState({ photoId });
-    this.handleColorSwitch = this.handleColorSwitch.bind(this);
   }
 
   handleColorSwitch(currentColor) {

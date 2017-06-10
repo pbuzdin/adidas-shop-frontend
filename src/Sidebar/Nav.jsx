@@ -14,7 +14,6 @@ const Link = styled(NavLink)`
   text-decoration: none;
   display: block;
   text-align: center;
-  font-weight: bold;
   font-family: 'AndaleMono', Arial;
   margin-bottom: 26px;
   color: #3c3c3c;

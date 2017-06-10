@@ -9,7 +9,7 @@ const Button = styled.button`
   padding: 4px;
   margin-left: 13px;
   cursor: pointer;
-  background-color: ${props => props.color};
+  background-color: ${p => p.color};
   &:focus {
     outline: none;
   }

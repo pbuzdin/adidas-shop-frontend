@@ -95,7 +95,7 @@ const BtnLarge = styled.button`
   margin-top: 176px;
   cursor: pointer;
   position: fixed;
-  max-width: 1055px;
+  max-width: 1075px;
   bottom: 0;
 `;
 
@@ -129,7 +129,7 @@ class Details extends Component {
     super(props);
     this.state = {
       photoId: 0,
-      currentColor: 0
+      currentColor: 0,
     };
     this.handleProductPhoto = this.handleProductPhoto.bind(this);
     this.handleColorSwitch = this.handleColorSwitch.bind(this);
